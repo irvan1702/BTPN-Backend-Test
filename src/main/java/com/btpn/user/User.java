@@ -45,6 +45,9 @@ public class User implements Serializable {
 	@Column(name="total_value")
 	private double totalValue;
 	
+	@Column(name="is_groceries")
+	private boolean isGroceries;
+	
 	public User() {};
 	
 	public User(Integer userId, String userName, String userType, Date joinDate) {
@@ -52,9 +55,6 @@ public class User implements Serializable {
 		this.userName = userName;
 		this.userType = userType;
 		this.joinDate = joinDate;
-		this.netAmount = 0.0;
-		this.discountValue = 0.0;
-		this.totalValue = 0.0;
 	}
 	
 	public User(String userId, String userName, String userType, String joinDate) {
@@ -63,9 +63,6 @@ public class User implements Serializable {
 			this.userName = userName;
 			this.userType = userType;
 			this.joinDate = sdf.parse(joinDate);
-			this.netAmount = 0.0;
-			this.discountValue = 0.0;
-			this.totalValue = 0.0;
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
@@ -125,6 +122,14 @@ public class User implements Serializable {
 
 	public void setTotalValue(double totalValue) {
 		this.totalValue = totalValue;
+	}
+
+	public boolean getIsGroceries() {
+		return isGroceries;
+	}
+
+	public void setIsGroceries(boolean isGroceries) {
+		this.isGroceries = isGroceries;
 	}
 
 	@Override

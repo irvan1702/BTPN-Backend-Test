@@ -1,4 +1,4 @@
-package com.mitrais.btpn;
+package com.btpn;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

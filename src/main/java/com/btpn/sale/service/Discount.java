@@ -101,6 +101,7 @@ public class Discount {
 		double netAmount = percentDiscount > 0.0 ? chargedBill - ((percentDiscount*chargedBill)/100) : chargedBill;
 		double result =  netAmount - discountByHundredBillsOnDollars(chargedBill);
 		user.setTotalValue(result);
+		user.setIsGroceries(isGroceries);
 		userService.saveUser(user);
 		return result;
 	}
